@@ -1,0 +1,721 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="en">
+<!--
+
+Theme by Kathleen Kam
+https://github.com/KathleenKam
+
+Copyright (c) Kathleen Kam. All rights reserved.  
+This work is licensed under GPL v3.0
+https://www.gnu.org/licenses/gpl-3.0.en.html
+
+-->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>{Title}{block:PostTitle} - {PostTitle}{/block:PostTitle}</title>
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    {block:Description}
+       <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    
+    <meta name="color:BGColor" content="#545454" />
+    <meta name="image:Background" content="" />
+    <meta name="image:Banner" content="" />
+    <meta name="color:Links" content="#008CBA" />
+    <meta name="color:LinksHover" content="#0078A0" />
+    
+    <meta name="color:AskContainer" content="#6f6f6f" />
+    <meta name="color:AskText" content="#ffffff" />
+    
+    <meta name="color:TopBarBG" content="	#333333" />
+    <meta name="color:TopBarBGHover" content="#272727" />
+    <meta name="color:TopBarText" content="#FFFFFF" />
+    
+    <meta name="color:PostContainer" content="#F2F2F2" />
+    <meta name="color:PostText" content="#333333" />
+    <meta name="color:PostInfoBorder" content="#dddddd" />
+    <meta name="color:PostInfoText" content="#6F6F6F" />
+    
+    <meta name="text:Dropdown1Label" content="Dropdown1" />
+    <meta name="text:Dropdown1Link1Title" content="Link1" />
+    <meta name="text:Dropdown1Link1URL" content="" />
+    <meta name="text:Dropdown1Link2Title" content="Link2" />
+    <meta name="text:Dropdown1Link2URL" content="" />
+    <meta name="text:Dropdown1Link3Title" content="Link3" />
+    <meta name="text:Dropdown1Link3URL" content="" />
+    
+    <meta name="text:Dropdown2Label" content="Dropdown2" />
+    <meta name="text:Dropdown2Link1Title" content="Link1" />
+    <meta name="text:Dropdown2Link1URL" content="" />
+    <meta name="text:Dropdown2Link2Title" content="Link2" />
+    <meta name="text:Dropdown2Link2URL" content="" />
+    <meta name="text:Dropdown2Link3Title" content="Link3" />
+    <meta name="text:Dropdown2Link3URL" content="" />
+    
+    <meta name="text:Dropdown3Label" content="Dropdown3" />
+    <meta name="text:Dropdown3Link1Title" content="Link1" />
+    <meta name="text:Dropdown3Link1URL" content="http://www.tumblr.com" />
+    <meta name="text:Dropdown3Link2Title" content="Link2" />
+    <meta name="text:Dropdown3Link2URL" content="" />
+    <meta name="text:Dropdown3Link3Title" content="Link3" />
+    <meta name="text:Dropdown3Link3URL" content="" />
+    
+    <meta name="if:InfiniteScroll" content="0" />
+    <meta name="if:ShowImageCaption" content="1" />
+    <meta name="if:ShowTags" content="1" />
+    
+    <meta name="text:NavTitle" content="My Blog" />
+    <meta name="text:AskLabel" content="asked" />
+    
+    <meta name="font:body" content="Helvetica Neue" />
+    
+    <script src="http://static.tumblr.com/tvtupyi/eZvndn57o/jquery.js"></script>
+    <link rel="stylesheet" href="http://static.tumblr.com/tvtupyi/Fedndn543/foundation.min.css" />
+    <script src="http://static.tumblr.com/tvtupyi/6irndn56w/modernizr.js"></script>
+    <script src="http://static.tumblr.com/wgijwsy/jgemkyt9x/jquery.photoset-grid.min.js"></script>
+    
+    <link rel="stylesheet" href="http://static.tumblr.com/tvtupyi/oDRmzwx2l/style.css" />
+    
+    <style type="text/css">
+      
+      body {
+        background-color: {color:BGColor};
+        background-image: url('{image:Background}');
+        background-repeat: repeat;
+        background-attachment: fixed;
+        color: {color:PostText};
+      }
+      
+      .post-panel h1 {
+        font-size: 2.125rem;
+      }
+      .post-panel h2, .post-panel h3 {
+        font-size: 1.6875rem;
+      }
+      .post-panel h4 {
+        font-size: 1.425rem;
+      }
+      .post-panel h5 {
+        font-size: 1.125rem;
+      }
+    
+      .post-panel {
+        font-family: {font:body},"Helvetica",Helvetica,Arial,sans-serif;
+      }
+      
+      .post-panel h1, .post-panel h2, .post-panel h3, .post-panel h4,.post-panel h5, .post-panel h6 {
+        font-family: {font:body},"Helvetica",Helvetica,Arial,sans-serif;
+      }
+      
+      .top-bar-section ul li:hover:not(.has-form) > a,
+      .top-bar-section li.hover > a:not(.button),
+      .top-bar-section li:not(.has-form) a:not(.button):hover,
+      .top-bar-section .dropdown li:not(.has-form):not(.active):hover > a:not(.button),
+      .no-js .top-bar-section ul li:hover > a {
+        background-color: {color:TopBarBGHover} !important;
+      }
+    
+      blockquote {
+        border-left-color: {color:PostInfoBorder};
+      }
+    
+      blockquote, blockquote p {
+        color: {color:PostText};
+      }
+    
+      a {
+        color: {color:Links};
+      }
+      
+      a:focus, a:hover {
+        color: {color:LinksHover};
+      }
+      
+      .button {
+        background-color: {color:Links};
+      }
+      
+      .button:focus, .button:hover {
+        background-color: {color:LinksHover};
+      }
+    
+      .top-bar, .top-bar-section li:not(.has-form) a:not(.button), .top-bar-section ul li:hover > a, .top-bar-section ul li:focus > a {
+        background-color: {color:TopBarBG};
+      }
+      
+      .top-bar .name h1 a, .top-bar-section ul li > a {
+        color: {color:TopBarText};
+      }
+    
+      .panel h1, .panel h2, .panel h3, .panel h4, .panel h5, .panel h6, .panel p {
+        color: {color:PostText};
+        word-wrap: break-word;
+      }
+      
+      .post-panel h1, .post-panel h2, .post-panel h3 {
+        text-align: center;
+      }
+      
+      div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+        word-wrap: break-word;
+      }
+    
+      .cbody {
+        margin-top: 20px;
+      }
+      
+      .post-caption {
+        margin-top: 20px !important;
+      }
+      
+      blockquote {
+        padding-left: 10px;
+        margin-left: 10px;
+        margin-right: 0px;
+        border-width: 3px;
+      }
+      
+      .quote-text {
+        font-family: "Georgia", "serif";
+      }
+      
+      hr.line {
+        border-color: {color:PostInfoBorder};
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+      
+      hr {
+        border-color: {color:PostInfoBorder};
+      }
+      
+      .tags hr {
+        color: {color:PostInfoBorder};
+      }
+      
+      .panel {
+        background-color: {color:PostContainer};
+      }
+      
+      .info {
+        display: block;
+        margin-bottom: 3.5rem;
+      }
+      
+      .info-text {
+        margin-top: -30px;
+      }
+      
+      .info-text span {
+        background-color: {color:PostContainer};
+        color: {color:PostInfoText};
+      }
+      
+      .info-text span a{
+        background-color: {color:PostContainer};
+        color: {color:PostInfoText};
+      }
+      
+      .tags hr {
+        margin-bottom: 0.5rem;
+      }
+      
+      .post-tags, .post-tags small, .post-tags a{
+        color: {color:PostInfoText} !important;
+      }
+      
+      .like_button, .reblog_button {
+        display: inline-block !important; 
+        zoom: 1;
+        *display: inline;
+        margin-top: -0.1rem;
+      }
+      
+      /* For embedded iframes */
+      .embed-box {
+          position: relative;
+          padding-bottom: 20%;
+          padding-top: 10px;
+          height: auto;
+          overflow: hidden;
+      }
+            
+      .embed-box iframe,
+      .embed-box object,
+      .embed-box embed {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+      }
+      
+      .chat-line {
+        margin-top: 5px;
+      }
+      
+      /*Asks*/
+      .asker-cont {
+        font-style: italic;
+        margin-bottom: 5px;
+        color: {color:AskText};
+        font-weight: bold;
+      }
+      
+      .asker-cont a, .asker-cont a:link, .asker-cont a:active, .asker-cont a:visited, .asker-cont a:hover {
+        color: {color:AskText};
+      }
+      
+      .asker-port-div {
+        width: 60px;
+        float: left;
+        padding-right: 7px;
+        padding-bottom: 5px;
+      }
+      
+      .question-cont:after {
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent {color:AskContainer};
+        display: block;
+        width: 0;
+        z-index: 1;
+        left: 50px;
+        top: 10px;
+      }
+      
+      .question-cont {
+        color: {color:AskText};
+        padding: 10px;
+        background-color: {color:AskContainer};
+        overflow: hidden;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -khtml-border-radius: 10px;
+        border-radius: 10px;
+      }
+      
+      .ask_icon {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        border: 3px solid {color:AskContainer};
+      }
+      
+      .no-margin {
+        margin: 0px;
+        padding: 0px;
+      }
+      
+      .margin-below {
+        margin-bottom: 1rem !important;
+      }
+      
+      /*Other*/
+      .desc-icon {
+        border: 3px double {color:PostInfoText};
+        margin-bottom: 3px;
+        -moz-border-radius: 80px;
+        -webkit-border-radius: 80px;
+        -khtml-border-radius: 80px;
+        border-radius: 80px;
+      }
+      
+      .post-title {
+        font-weight: bold;
+      }
+      
+      .post-title-link {
+        font-style: italic;
+        text-align: center;
+        color: {color:Links} !important;
+      }
+      
+      .match-post-body {
+        background-color: {color:PostContainer}; 
+      }
+      
+      .poster-orig {
+        text-align: left;
+        width: 96px;
+        float: left;
+        padding-top: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+      }
+      
+      .poster-orig img {
+        padding-bottom: 3px;
+      }
+      
+      .poster-orig a {
+        font-size: 10px;
+      }
+      
+      .align-divs {
+        float: left;
+      }
+      
+      /* Tables and tags */
+      table {
+        width: 100%;
+      }
+      
+      .tag-table tr th, .tag-table tr td, .tag-table tr td ul li {
+          font-size: 0.65rem;
+      }
+      
+      .tag-table tr th {
+          text-align: center;
+      }
+
+      .tag-table-cont {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+      }
+
+      .tag-table {
+        -webkit-box-flex: 1;
+        -moz-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: 33%;
+        margin-right: 1%;
+      }
+      
+      .tag-table:nth-child(3) {
+        margin-right: 0;
+      }
+      
+      .member-table .member-name {
+        text-align: center;
+      }
+      
+      .member-table .member-icon {
+        width: auto;
+        text-align: center;
+      }
+      
+      .member-table .member-icon img {
+        border: 3px double #6f6f6f;
+        border-radius: 80px;
+        margin-bottom: 3px;
+        width: 80px;
+        text-align: center;
+      }
+      
+      .member-table .member-details {
+        font-size: 0.75rem;
+        vertical-align: top;
+        text-align: center;
+        width: auto;
+      }
+      
+      .member-table .member-desc {
+        text-align: justify;
+        width: 60%;
+      }
+      
+      #about-table tr td {
+        text-align: justify;
+      }
+      
+    </style>
+    
+    <meta name="text:Search Label" content="" />
+    <script type="text/javascript">
+        function tagSearch(form) {
+          window.location = "/tagged/" + form.tag.value;
+          return false;
+        }
+    </script>
+    
+  </head>
+  <body>
+    
+    <div class="row navigation">
+      <div class="large-12 columns">
+         <a href="/"><img src="{image:Banner}"/></a> 
+      </div>
+      <div class="large-12 columns">
+        <nav class="top-bar" data-topbar role="navigation">
+          <ul class="title-area">
+            <li class="name">
+              <h1><a href="/">{text:NavTitle}</a></h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+          </ul>
+          
+          <section class="top-bar-section">
+            <ul class="right nav-links">
+              <li><a href="/">Home</a></li>
+              {block:IfDropdown1Label}
+              <li class="has-dropdown">
+                <a href="">{text:Dropdown1Label}</a>
+                <ul class="dropdown">
+                  {block:IfDropdown1Link1Title}<li><a href="{text:Dropdown1Link1URL}">{text:Dropdown1Link1Title}</a></li>{/block:IfDropdown1Link1Title}
+                  {block:IfDropdown1Link2Title}<li><a href="{text:Dropdown1Link2URL}">{text:Dropdown1Link2Title}</a></li>{/block:IfDropdown1Link2Title}
+                  {block:IfDropdown1Link3Title}<li><a href="{text:Dropdown1Link3URL}">{text:Dropdown1Link3Title}</a></li>{/block:IfDropdown1Link3Title}
+                </ul>
+              </li>
+              {/block:IfDropdown1Label}
+              {block:IfDropdown2Label}
+              <li class="has-dropdown">
+                <a href="">{text:Dropdown2Label}</a>
+                <ul class="dropdown">
+                  {block:IfDropdown2Link1Title}<li><a href="{text:Dropdown2Link1URL}">{text:Dropdown2Link1Title}</a></li>{/block:IfDropdown2Link1Title}
+                  {block:IfDropdown2Link2Title}<li><a href="{text:Dropdown2Link2URL}">{text:Dropdown2Link2Title}</a></li>{/block:IfDropdown2Link2Title}
+                  {block:IfDropdown2Link3Title}<li><a href="{text:Dropdown2Link3URL}">{text:Dropdown2Link3Title}</a></li>{/block:IfDropdown2Link3Title}
+                </ul>
+              </li>
+              {/block:IfDropdown2Label}
+              {block:IfDropdown3Label}
+              <li class="has-dropdown">
+                <a href="">{text:Dropdown3Label}</a>
+                <ul class="dropdown">
+                  {block:IfDropdown3Link1Title}<li><a href="{text:Dropdown3Link1URL}">{text:Dropdown3Link1Title}</a></li>{/block:IfDropdown3Link1Title}
+                  {block:IfDropdown3Link2Title}<li><a href="{text:Dropdown3Link2URL}">{text:Dropdown3Link2Title}</a></li>{/block:IfDropdown3Link2Title}
+                  {block:IfDropdown3Link3Title}<li><a href="{text:Dropdown3Link3URL}">{text:Dropdown3Link3Title}</a></li>{/block:IfDropdown3Link3Title}
+                </ul>
+              </li>
+              {/block:IfDropdown3Label}
+              
+            </ul>
+          
+          </section>
+        
+        </nav>
+      </div>
+    </div>
+    
+    <div class="row cbody text-justify">
+      <div class="large-12 columns">
+        <div class="row">
+        
+          <div class="large-4 columns">
+            <table id="about-table"> 
+            <thead> 
+              <tr><th class="match-post-body">About</th></tr> 
+            </thead> 
+            <tbody> 
+              <tr> 
+              <td>
+                <div class="text-center"><img src="{PortraitURL-128}" class="desc-icon" /></div>
+                {Description}
+                <div style="font-size: 10px; text-align: right; margin-top: 10px;"><a href="http://dimensionslip.tumblr.com">Theme © DimensionSlip</a></div>
+              </td> 
+              </tr> 
+            </tbody> 
+            </table>
+            <form onsubmit="return tagSearch(this)">
+              <div class="large-12 columns">
+                <div class="row collapse">
+                  <div class="large-8 columns">
+                    <input type="text" name="tag" placeholder="Tag Search">
+                  </div>
+                  <div class="large-4 columns">
+                    <input type="submit" class="button postfix" value="Go"></input>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        
+          <div class="large-8 columns">
+          
+            {block:TagPage}
+               <div class="panel text-center"><h5>Posts tagged "{Tag}"</h5></div>
+            {/block:TagPage}
+          
+            {block:Posts}
+            <div class="panel">
+            
+              {block:Date}
+              <div class="info">
+                <hr class="line"/>
+
+                <h4 class="info-text text-right"><small><span>
+                <span class="left">
+                <span class="icon-clock"></span>&nbsp;{block:RebloggedFrom}Reblogged {/block:RebloggedFrom}{block:NotReblog}Posted {/block:NotReblog}on <a href="{Permalink}">{ShortMonth} {DayOfMonth} {Year}</a> with <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+                </span>
+                <span class="right">{ReblogButton}&nbsp;{LikeButton}</span>
+                </span></small></h4>
+              </div>
+              {/block:Date}
+            
+              <div class="post-panel">
+              {block:Text}
+                {block:Title}
+                  <h3 class="post-title">{Title}</h3>
+                {/block:Title}
+                {Body}
+              {/block:Text}
+              
+              {block:Answer}
+                <div class="large-12 columns">
+                  <div class="row margin-below">
+                    <div class="asker-port-div">
+                      <img src="{AskerPortraitURL-48}" class="ask_icon" />
+                    </div>
+                    <div class="question-cont">
+                      <div class="asker-cont">{Asker} {text:AskLabel}:</div>{Question}
+                    </div>
+                  </div>
+                </div>
+                <div class="answer">
+                {Answer}
+                </div>
+              {/block:Answer}
+
+              {block:Photo}
+                <div class="text-center"><a href="{PhotoURL-HighRes}"><img src="{PhotoURL-500}" alt="{PhotoAlt}"/></a></div>
+                {block:IfShowImageCaption}
+                {block:Caption}
+                  <div class="post-caption">{Caption}</div>
+                {/block:Caption}
+                {block:IfShowImageCaption}
+              {/block:Photo}
+
+              {block:Panorama}
+                {LinkOpenTag}
+                   <div class="text-center"><img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/></div>
+                {LinkCloseTag}
+
+                {block:Caption}
+                    <div class="post-caption">{Caption}</div>
+                {/block:Caption}
+              {/block:Panorama}
+
+              {block:Photoset}
+              <div class="photoset-grid" data-layout="{PhotosetLayout}" data-id="photoset{PostID}">
+                {block:Photos}
+                  <img src="{PhotoURL-500}"
+                    {block:HighRes}data-highres="{PhotoURL-HighRes}"{/block:HighRes}
+                    {block:Caption}alt="{Caption}"{/block:caption} />
+                {/block:Photos}
+              </div>
+
+              {block:Caption}
+                <div class="post-caption">{Caption}</div>
+              {/block:Caption}
+            {/block:Photoset}
+
+              {block:Quote}
+                <h4 class="quote-text">"{Quote}"</h4>
+
+                {block:Source}
+                    <div class="text-right">- {Source}</div>
+                {/block:Source}
+              {/block:Quote}
+
+              {block:Link}
+                <a href="{URL}" {Target}><h3 class="post-title-link">{Name}</h3></a>
+
+                {block:Description}
+                  <div class="post-caption">{Description}</div>
+                {/block:Description}
+              {/block:Link}
+
+              {block:Chat}
+                {block:Title}
+                   <h3 class="post-title">{Title}</h3>
+                {/block:Title}
+
+                    {block:Lines}
+                        <div class="chat-line">
+                            {block:Label}
+                                <strong>{Label}</strong>
+                            {/block:Label}
+
+                            {Line}
+                        </div>
+                    {/block:Lines}
+              {/block:Chat}
+
+              {block:Video}
+                <div class="flex-video">{Video-500}</div>
+                
+                {block:Caption}
+                  <div class="post-caption">{Caption}</div>
+                {/block:Caption}
+              {/block:Video}
+
+              {block:Audio}
+                {block:AudioEmbed}<div class="embed-box">{AudioEmbed}</div>{/block:AudioEmbed}
+                {block:Caption}
+                  <div class="post-caption">{Caption}</div>
+                {/block:Caption}
+              {/block:Audio}
+              </div>
+              
+              {block:Date}
+              <div class="tags">
+                <hr>
+                {block:IfShowTags}{block:HasTags}
+                <h4 class="post-tags">
+                <small><span class="icon-tag"></span> {block:Tags}#<a href="{TagURL}">{Tag}</a> {/block:Tags}</small>
+                </h4>{/block:HasTags}{/block:IfShowTags}
+                
+                {block:RebloggedFrom}
+                <h5 class="post-tags text-right"><small>
+                 (<span class="icon-flag"></span> Source: <a href="{ReblogRootURL}">{ReblogRootName}</a>)
+                </small></h5>
+                {/block:RebloggedFrom}
+              </div>
+              {/block:Date}
+              
+            </div>
+            {/block:Posts}
+            
+            {block:PostNotes}
+            <div class="panel" id="notes">
+              {PostNotes}
+            </div>
+            {/block:PostNotes}
+            
+            {block:Pagination}
+            <div class="pagination-centered">
+            <ul class="pagination"> 
+              {block:PreviousPage}<li class="arrow"><a href="{PreviousPage}">&laquo;</a></li>{/block:PreviousPage}
+              {block:JumpPagination length="5"}
+                {block:CurrentPage}
+                   <li class="current"><a href="{URL}">{PageNumber}</a></li>
+                {/block:CurrentPage}
+
+                {block:JumpPage}
+                    <li><a href="{URL}">{PageNumber}</a></li>
+                {/block:JumpPage}
+              {/block:JumpPagination}
+              {block:NextPage}<li class="arrow"><a href="{NextPage}">&raquo;</a></li>{/block:NextPage}
+            </ul>
+            </div>
+            {/block:Pagination}
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <script src="http://static.tumblr.com/tvtupyi/sH8ndn5a7/foundation.min.js"></script>
+    <script type="text/javascript">
+      $(document).foundation();
+      $('.photoset-grid').photosetGrid({
+        highresLinks: true,
+        rel: $('.photoset-grid').attr('data-id'),
+        gutter: '10px'
+        });
+    </script>
+  </body>
+</html>
